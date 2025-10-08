@@ -1,0 +1,46 @@
+# --- Python environment ---
+.venv/
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Build artifacts ---
+dist/
+build/
+*.spec
+*.egg-info/
+
+# --- IDE / editor ---
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# --- Logs ---
+*.log
+
+# --- Testing ---
+.coverage
+.pytest_cache/
+htmlcov/
+.cache/
+*.cache/
+
+# --- Packaging ---
+*.whl
+
+# --- Misc ---
+*.bak
+
+# --- Databases ---
+*.sqlite3
+*.db
+*.sqlite
+
+# --- Documentation builds ---
+*.pdf
+!User_Manual.pdf
+!AntiPasteGuard_ProjectPlan_and_Documentation.pdf

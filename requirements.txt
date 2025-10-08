@@ -1,0 +1,35 @@
+# --- Core input & clipboard ---
+pynput>=1.7.6
+pyperclip>=1.8.2
+
+# --- Logging & typing ---
+structlog>=24.1.0
+loguru>=0.7.2
+typing-extensions>=4.10.0
+
+# --- Process & focus tracking ---
+psutil>=5.9.8
+pywin32>=306; platform_system == "Windows"
+pyobjc-framework-Quartz>=10.1; platform_system == "Darwin"
+xcffib>=1.4.0; platform_system == "Linux"
+python-xlib>=0.33; platform_system == "Linux"
+
+# --- Anomaly detection & metrics ---
+numpy>=1.26.0
+pandas>=2.2.0
+scipy>=1.12.0
+
+# --- Crypto & hashing ---
+cryptography>=42.0.0
+pycryptodome>=3.20.0
+blake3>=0.4.1
+
+# --- Visualization & export ---
+matplotlib>=3.8.0
+reportlab>=4.0.0
+
+# --- Testing ---
+pytest>=8.0.0
+
+# --- Packaging (Stage 8) ---
+pyinstaller>=6.5.0
