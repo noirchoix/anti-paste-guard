@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PasteGuard Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="mark">PG</div>
+        <div>
+          <h1>PasteGuard Web</h1>
+          <p>Controlled writing integrity</p>
+        </div>
+      </div>
+      <nav>
+        <button class="nav active" data-panel="current">Current session</button>
+        <button class="nav" data-panel="archive">Archive</button>
+        <button class="nav" data-panel="export">Export</button>
+      </nav>
+      <div class="privacy-note">
+        <strong>Privacy mode</strong>
+        <span>Metadata-only by default. No typed text or clipboard text is retained unless snippet capture is explicitly enabled.</span>
+      </div>
+    </aside>
+
+    <main>
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Local-first assessment telemetry</p>
+          <h2>Writing session review</h2>
+        </div>
+        <div class="actions">
+          <button id="refreshBtn">Refresh</button>
+          <button id="clearBtn" class="danger">Clear current</button>
+        </div>
+      </header>
+
+      <section id="currentPanel" class="panel-section">
+        <div class="summary-grid">
+          <article class="summary-card score-card">
+            <span>Risk score</span>
+            <strong id="riskScore">0</strong>
+            <p id="riskSummary">No active signals.</p>
+          </article>
+          <article class="summary-card"><span>Pastes</span><strong id="pasteCount">0</strong><p>Paste events observed.</p></article>
+          <article class="summary-card"><span>Keys</span><strong id="keyCount">0</strong><p>Keydown metadata only.</p></article>
+          <article class="summary-card"><span>Flags</span><strong id="flagCount">0</strong><p>Anomaly rules triggered.</p></article>
+        </div>
+
+        <div class="workspace">
+          <section class="card">
+            <div class="card-head">
+              <h3>Anomaly timeline</h3>
+              <span id="sessionStatus" class="status">Idle</span>
+            </div>
+            <div id="anomalyList" class="timeline empty">No anomalies yet.</div>
+          </section>
+
+          <section class="card">
+            <div class="card-head">
+              <h3>Event feed</h3>
+              <span id="eventCount">0 events</span>
+            </div>
+            <div id="eventList" class="event-list empty">No event metadata yet.</div>
+          </section>
+        </div>
+      </section>
+
+      <section id="archivePanel" class="panel-section hidden">
+        <section class="card">
+          <div class="card-head"><h3>Archived sessions</h3><span>Last 30</span></div>
+          <div id="archiveList" class="archive-list empty">No archived sessions.</div>
+        </section>
+      </section>
+
+      <section id="exportPanel" class="panel-section hidden">
+        <section class="card export-card">
+          <h3>Export integrity report</h3>
+          <p>Export the current session as JSON for full review or CSV for event-level analysis.</p>
+          <div class="actions left">
+            <button id="exportJsonBtn">Download JSON</button>
+            <button id="exportCsvBtn">Download CSV</button>
+          </div>
+          <pre id="exportPreview">No session loaded.</pre>
+        </section>
+      </section>
+    </main>
+  </div>
+  <script src="dashboard.js"></script>
+</body>
+</html>

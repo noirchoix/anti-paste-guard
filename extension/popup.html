@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PasteGuard Web</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="top">
+      <div>
+        <p class="eyebrow">Controlled writing</p>
+        <h1>PasteGuard Web</h1>
+      </div>
+      <span id="statusPill" class="pill">Idle</span>
+    </header>
+
+    <section class="score-card">
+      <div class="score-ring"><span id="riskScore">0</span></div>
+      <div>
+        <p class="label">Session risk</p>
+        <p id="riskText" class="risk-text">No active session.</p>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button id="startBtn" class="primary">Start session</button>
+      <button id="stopBtn" class="secondary">Stop</button>
+    </section>
+
+    <section class="grid">
+      <div><strong id="pasteCount">0</strong><span>Pastes</span></div>
+      <div><strong id="keyCount">0</strong><span>Keys</span></div>
+      <div><strong id="anomalyCount">0</strong><span>Flags</span></div>
+    </section>
+
+    <section class="latest">
+      <div class="section-title">Latest flag</div>
+      <p id="latestFlag">No anomaly recorded.</p>
+    </section>
+
+    <footer>
+      <button id="dashboardBtn" class="link-btn">Open dashboard</button>
+      <button id="optionsBtn" class="link-btn">Settings</button>
+    </footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
